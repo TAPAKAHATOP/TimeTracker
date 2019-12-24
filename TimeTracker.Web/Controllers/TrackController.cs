@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using TimeTracker.Core.Dtos;
 using TimeTracker.Core.Models;
 using TimeTracker.Core.Services;
 
 namespace TimeTracker.Web.Controllers
 {
-    public class TrackController : ABaseController<Track, TrackDTO, ITrackService>
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TracksController : ABaseController<Track, TrackDTO, ITrackService>
     {
-        public TrackController(ITrackService srv) : base(srv)
+        public TracksController(ITrackService srv) : base(srv)
         {
 
         }

@@ -11,9 +11,9 @@ namespace TimeTracker.Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClientProcessController : ABaseController<ClientProcess, ClientProcessDTO, IClientProcessService>
+    public class ClientProcessesController : ABaseController<ClientProcess, ClientProcessDTO, IClientProcessService>
     {
-        public ClientProcessController(IClientProcessService srv) : base(srv)
+        public ClientProcessesController(IClientProcessService srv) : base(srv)
         {
         }
         public override ClientProcessDTO ToDTO(ClientProcess domain)

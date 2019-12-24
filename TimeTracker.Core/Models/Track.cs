@@ -6,7 +6,7 @@ namespace TimeTracker.Core.Models
     public class Track : ABaseItem, ICountable
     {
         public virtual DateTime Start { get; set; }
-        public virtual DateTime End { get; set; }
+        public virtual DateTime Finish { get; set; }
 
         public virtual TrackableItem Item { get; set; }
 

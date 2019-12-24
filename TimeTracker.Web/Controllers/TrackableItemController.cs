@@ -1,13 +1,16 @@
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using TimeTracker.Core.Dtos;
 using TimeTracker.Core.Models;
 using TimeTracker.Core.Services;
 
 namespace TimeTracker.Web.Controllers
 {
-    public class TrackableItemController : ABaseController<TrackableItem, TrackableItemDTO, ITrackableItemService>
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TrackableItemsController : ABaseController<TrackableItem, TrackableItemDTO, ITrackableItemService>
     {
-        public TrackableItemController(ITrackableItemService srv) : base(srv)
+        public TrackableItemsController(ITrackableItemService srv) : base(srv)
         {
         }
 

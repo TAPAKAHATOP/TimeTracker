@@ -26,10 +26,10 @@ namespace TimeTracker.Core.Services.Implements
                 .Left.JoinAlias(() => trackAlias.Item, () => trackableItemAlias)
                 .Where(() => trackAlias.Item.Id == id)
                 .And(Restrictions.Disjunction()
-                    .Add(() => trackAlias.Start >= from && trackAlias.End < to)       //inner
-                    .Add(() => trackAlias.Start <= from && trackAlias.End >= from)    //outer
-                    .Add(() => trackAlias.Start <= from && trackAlias.End > from)     //left
-                    .Add(() => trackAlias.Start < to && trackAlias.End >= to)         //right
+                    .Add(() => trackAlias.Start >= from && trackAlias.Finish < to)       //inner
+                    .Add(() => trackAlias.Start <= from && trackAlias.Finish >= from)    //outer
+                    .Add(() => trackAlias.Start <= from && trackAlias.Finish > from)     //left
+                    .Add(() => trackAlias.Start < to && trackAlias.Finish >= to)         //right
                 ).List();
 
                 return false;
@@ -48,10 +48,10 @@ namespace TimeTracker.Core.Services.Implements
                 .Left.JoinAlias(() => trackAlias.Item, () => trackableItemAlias)
                 .Where(() => trackAlias.Item.Id == id)
                 .And(Restrictions.Disjunction()
-                    .Add(() => trackAlias.Start >= from && trackAlias.End < to)       //inner
-                    .Add(() => trackAlias.Start <= from && trackAlias.End >= from)    //outer
-                    .Add(() => trackAlias.Start <= from && trackAlias.End > from)     //left
-                    .Add(() => trackAlias.Start < to && trackAlias.End >= to)         //right
+                    .Add(() => trackAlias.Start >= from && trackAlias.Finish < to)       //inner
+                    .Add(() => trackAlias.Start <= from && trackAlias.Finish >= from)    //outer
+                    .Add(() => trackAlias.Start <= from && trackAlias.Finish > from)     //left
+                    .Add(() => trackAlias.Start < to && trackAlias.Finish >= to)         //right
                 ).List();
             }
         }
