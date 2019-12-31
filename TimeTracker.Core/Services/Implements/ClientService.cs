@@ -12,6 +12,14 @@ namespace TimeTracker.Core.Services.Implements
         {
         }
 
+        public Client GetClientByTitle(string title)
+        {
+            using (var session = this.Database.getSession())
+            {
+                return session.QueryOver<Client>().Where(cl => cl.Title == title).SingleOrDefault();
+            }
+        }
+
         public override Client Save(Client item)
         {
             using (var session = this.Database.getSession())

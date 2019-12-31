@@ -44,7 +44,8 @@ namespace TimeTracker.Core.Services.Implements
         {
             using (var session = this.Database.getSession())
             {
-                return (TDomain)session.Save(item);
+                session.Save(item);
+                return item;
             }
         }
 

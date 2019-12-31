@@ -5,6 +5,6 @@ namespace TimeTracker.Core.Services
 {
     public interface IClientService : IBaseService<Client>
     {
-
+        Client GetClientByTitle(string title);
     }
 }

@@ -24,8 +24,7 @@ namespace TimeTracker.Web.Controllers
             return new TrackableItemDTO()
             {
                 Id = domain.Id,
-                Created = domain.Created,
-                Count = domain.Count
+                Created = domain.Created
             };
         }
     }

@@ -8,8 +8,10 @@ namespace TimeTracker.Core.Mappings
     {
         public void Override(AutoMapping<TrackableItem> map)
         {
-            map.References(item => item.OwnerProcess).Cascade.All();
             map.HasMany(item => item.TrackList);
+            map.HasMany(item => item.States);
+
+            map.References(item => item.OwnerProcess).Cascade.All();
         }
     }
 }

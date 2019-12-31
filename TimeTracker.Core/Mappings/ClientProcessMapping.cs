@@ -8,6 +8,7 @@ namespace TimeTracker.Core.Mappings
     {
         public void Override(AutoMapping<ClientProcess> mapping)
         {
+            mapping.HasMany(item => item.Items);
             mapping.References(item => item.OwnerClient).Cascade.All();
         }
     }
